@@ -24,7 +24,7 @@ const UploadForm = () => {
     
         console.log(selected.type);
 
-        const types = ['image/png','image/jpeg'] 
+        const types = ['image/png','image/jpeg', 'image/jpg'] 
 
 
         //not sure why this conditional isnt working?
@@ -50,8 +50,7 @@ const UploadForm = () => {
                 <button type="submit">Submit</button>
                 <div className="output">
                     { error && <div className="error" >{ error }</div>}
-                    { file && <div className="file" >{ file }</div>}
-                    { file  && <ProgressBar file={file}/>}
+                    { file  && <ProgressBar file={file} setFile={setFile}/>}
                 </div>
             </form>
           );

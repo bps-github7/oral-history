@@ -29,10 +29,30 @@ body{
   font-size: 2.6rem;
 }
 
+label:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.output{
+    height: 60px;
+    font-size: 0.8rem;
+}
+
+.error{
+    color: var(--error);
+}
+
 /* upload form styles */
 
 
 /* progress bar styles */
+.progress-bar{
+    height : 5px;
+    background: var(--primary);
+    margin-top: 20px;
+}
+
 
 
 /* image grid styles */
