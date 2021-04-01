@@ -1,0 +1,14 @@
+nav {
+background-color: antiquewhite;
+}
+
+nav h1 {
+
+    display: inline-block;
+    margin-right: 50px;
+
+}
+
+nav .title {
+    font-size: larger;
+}
