@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useAuth } from '../../contexts/AuthContext';
 import './auth.css';
 
 
@@ -12,6 +13,15 @@ const SignUp = () => {
     
     const [ confirmPassword, setConfirmPassword ] = useState(null);
     const [ confirmPasswordError, setConfirmPasswordError ] = useState(null);
+
+    const { signUp } = useAuth();
+
+    
+    const handleSubmit = event => {
+        event.preventDefault();
+        signUp(email, password);
+    }
+
 
 
     const handleEmailChange = (event) => {
@@ -55,34 +65,40 @@ const SignUp = () => {
         }
     }
 
-    const handleSubmit = event => {
-        event.preventDefault();
-        console.log(event.target.value)
-    }
-
 
     return(
-        <form onSubmit={handleSubmit} className="App-sign-up">
-            <label className="auth-field"> Email:
+        <form style={{maxWidth: "400px"}} onSubmit={handleSubmit} className="App-sign-up">
+            <h2>Sign up form:</h2>
+            <p style={{border: "2px dotted green", margin: 20, padding: 10}}>After approval from the site admin, account holders will be able to post and comment on images</p>
+
+            <div>Email:
                 <input onChange={handleEmailChange} type="text"/>
 
                 { !emailError && <div className="error">{emailError}</div>}
-            </label>
+            </div>
 
-            <label className="auth-field"> Password:
+            <div>Password: 
                 <input onChange={handlePasswordChange} type="password"/>
 
                 { !passwordError && <div className="error">{passwordError}</div>}
                 {/* should also define errors for the other offenders- length, expected characters */}
-            </label>
+            </div>
 
-            { password && 
+
+            <div>Password: 
+                <input onChange={handleConfirmPasswordChange} type="password"/>
+
+                { !passwordError && <div className="error">{passwordError}</div>}
+                {/* should also define errors for the other offenders- length, expected characters */}
+            </div>
+
+            {/* { password && 
                 <label className="auth-field"> Password:
                     <input onChange={handleConfirmPasswordChange} type="password"/>
                     { !confirmPasswordError && <div className="error">{confirmPasswordError}</div>}
                     { password !== confirmPassword && <div className="error">Password and Confirm Password must match</div>  }
                 </label>
-            }
+            } */}
             <button type="submit">Create Account</button>
             <div>Already have an account? Sign In!</div>
         </form>
