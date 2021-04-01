@@ -1,12 +1,37 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Oral-History Application
 
-## Available Scripts
+A photo-documentation site made to review and remeber
+the life, work and projects of my late Father Paul D. Sehnert. 
+
+When he became ill, we worked together to develop a collection
+of his important belongings and all the memories (oral history) associated with them. 
+
+The site will include photos of these items and the stories, explanation and history behind them. 
+Admin approved account holders such as family members and close family friends will be able to upload
+their own images and comment on images across the site. 
+
+
+### Technical guid
+I want to be clear that the foundation for this site was taken from (technically, coded along with)
+Traversy Media and the NetNinja, in the [following youtube upload](https://www.youtube.com/watch?v=vUe91uOx7R0) 
+
+I coded along with the project while familiarizing myself with the ReactJS framework. After reaching
+the completion of the upload, available in the [final commit of their Git repo](https://github.com/iamshaunjp/firegram/tree/final-files) all proceeding design, implementation, documenting and testing was done by myself.
+
+As a quick note to other developers, the above mentioned youtube upload and associated src code
+is a great resource for learning React as well as the fundementals of modern web design.
+It goes to great lengths to explore some of the more abstract concepts of how a image viewer site is
+constructed, including many assumptions, taken for granted, that even a seasoned developer may overlook.
+My highest praise goes to Brad and Shaun, who are some of the more didactic
+and helpful uploaders in the youtube and coding tutorial ecosystem. 
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 In the project directory, you can run:
 
-### `npm start`
+`npm start`
 
-Runs the app in the development mode.<br />
+Which runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />

@@ -1,37 +1,32 @@
 import React, { useState } from 'react';
 import ProgressBar from './ProgressBar';
-// import ProgressBar from './ProgressBar';
 
 
+
+// TODO: add a new controlled component for providing text to use
+// as photo description/ alt text.
 const UploadForm = () => {
     
     //equivalent to setting state to '' in class based component
     const [file, setFile] = useState(null);
+    // const [description, setDescription] = useState(null);
     const [error, setError] = useState(null);
-    // types of files we will allow
-   
 
-
-    const handleSubmit = event => {
-        event.preventDefault();
-        //do validation
-
-    }
 
     const handleChange = event => {
     
+        // reference to the selected file,
+        // and a list of allowable image types
         const selected = event.target.files[0]
-    
-        console.log(selected.type);
-
-        const types = ['image/png','image/jpeg', 'image/jpg'] 
+        const types = ['image/png','image/jpeg'] 
 
 
-        //not sure why this conditional isnt working?
         if (selected && types.includes(selected.type)) {
-            console.log("got this far!")
             setFile(selected);
             setError('');
+            // if (event.target.type === 'textarea') {
+            //     console.log("we got a description")
+            // }
         } else {
             setFile(null);
             setError('Enter a valid photo type : jpg or png')
@@ -42,10 +37,18 @@ const UploadForm = () => {
 
     
         return (
-            <form onSubmit={handleSubmit}>
+            <form>
                 <label>
                     <span>+</span>
                     <input onChange={handleChange} type="file"/>
+
+                    {/* <div className="description">
+                        <label className="inner-label">Description of the uploaded file</label>
+                        <textarea cols="30" rows="10"
+                        onChange={handleChange}
+                        ></textarea>
+                    </div> */}
+                    
                 </label>
                 
                 <div className="output">
