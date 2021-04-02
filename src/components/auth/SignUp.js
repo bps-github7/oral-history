@@ -18,7 +18,7 @@ const SignUp = () => {
     const [signUpError, setSignUpError ] = useState(null);
     const [loading, setLoading ] = useState(false);
     
-    const { signUp } = useAuth();
+    const { signUp, currentUser } = useAuth();
     const { history } = useHistory();
 
     
@@ -29,7 +29,7 @@ const SignUp = () => {
             setLoading(true);
             await signUp(email, password);
             // what does this do again? causing a bug rn
-            history.push("/");
+            history.push(`/profiles/${currentUser.id}`);
         } catch {
             setSignUpError("Error while trying to create acccount!");
         }
@@ -93,6 +93,7 @@ const SignUp = () => {
     return(
         <form style={{maxWidth: "400px"}} onSubmit={handleSubmit} className="App-sign-up">
             <h2>Sign up form:</h2>
+            { currentUser && currentUser.uid }
             <p style={{border: "2px dotted green", margin: 20, padding: 10}}>After approval from the site admin, account holders will be able to post and comment on images</p>
             { signUpError && <div className="error">{signUpError}</div> }
             <div>Email:

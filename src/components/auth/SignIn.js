@@ -14,8 +14,9 @@ const SignIn = () => {
     const [signInError, setSignInError] = useState(null);
     const [loading, setLoading] = useState(null);
 
-    const { login } = useAuth();
+    const { login, currentUser } = useAuth();
     const { history } = useHistory();
+
 
     const handleEmailChange = (event) => {
         if (event.target.value) {
@@ -46,12 +47,12 @@ const SignIn = () => {
             setSignInError('');
             setLoading(true);
             await login(email, password);
-            history.push("/")
+            if (currentUser.id)
+                history.push(`/profiles/${currentUser.id}`)
         } catch {
             setSignInError("error while signing in")
         }
-        setLoading(false);
-        
+        setLoading(false);       
     }
 
     return(
@@ -73,11 +74,7 @@ const SignIn = () => {
             <button disabled type="submit">Log in</button>}
 
             <div> Need an account ? <Link to="/sign-up">Sign Up</Link></div>
-
-
         </form>
-
     )
 }
-
 export default SignIn;

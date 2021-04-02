@@ -8,7 +8,7 @@ export function useAuth () {
 }
 
 const AuthProvider = ({ children }) => {
-    const [ currentUser, setCurrentUser ] = useState();
+    const [ currentUser, setCurrentUser ] = useState(null);
     const [ loading, setLoading ] = useState(true);
 
 
@@ -18,6 +18,10 @@ const AuthProvider = ({ children }) => {
 
     const login = (email, password) => {
         return auth.signInWithEmailAndPassword(email, password);
+    }
+
+    const logout = () => {
+        return auth.logout();
     }
 
 
@@ -33,7 +37,9 @@ const AuthProvider = ({ children }) => {
 
     const value = {
         currentUser,
-        signUp
+        signUp,
+        login,
+        logout
     }
 
     return (
