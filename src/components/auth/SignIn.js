@@ -47,8 +47,8 @@ const SignIn = () => {
             setSignInError('');
             setLoading(true);
             await login(email, password);
-            if (currentUser.id)
-                history.push(`/profiles/${currentUser.id}`)
+            history.push("/");
+            // history.push(`/profiles/${currentUser.uid}`)
         } catch {
             setSignInError("error while signing in")
         }

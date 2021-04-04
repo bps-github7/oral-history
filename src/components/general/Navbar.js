@@ -51,7 +51,7 @@ const Navbar = () => {
         <Route exact path="/sign-up" component={SignUp}/>
         <PrivateRoute exact path="/profiles/:uid/edit" component={ProfileForm}/>
         
-        <PrivateRoute exact path="/profiles/:uid" component={ViewProfile}/>
+        <Route exact path="/profiles/:uid" component={ViewProfile}/>
         
         <Route exact path="/profiles" component={BrowseProfiles}/>
         

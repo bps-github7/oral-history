@@ -29,7 +29,7 @@ const SignUp = () => {
             setLoading(true);
             await signUp(email, password);
             // what does this do again? causing a bug rn
-            history.push(`/profiles/${currentUser.id}`);
+            history.push(`/profiles/${currentUser.uid}`);
         } catch {
             setSignUpError("Error while trying to create acccount!");
         }
