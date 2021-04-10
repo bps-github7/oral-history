@@ -17,8 +17,7 @@ function App() {
         <div>
             <Router>
                 <AuthProvider>      
-                    
-                    
+                    <Navbar/>                    
                     <Switch>
                         
                         <Route exact path="/about" component={About}/>
@@ -32,7 +31,6 @@ function App() {
                         
                         <Route exact path="/photos" component={BrowsePhotos}/>
                     </Switch>
-                    <Navbar/>
                 </AuthProvider>
 
 

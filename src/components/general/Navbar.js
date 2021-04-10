@@ -20,32 +20,40 @@ const Navbar = () => {
     }
     return (
             <nav style={{padding: "5px"}}>
-            <h1 className="title">Oral-History</h1>
+                <ul style={{ display : "inline", listStyle: "none"}}>
+                    <li>
+                        <h1 className="title">Oral-History</h1>
+                    </li>
 
-            <h1> 
-                <Link to="/about">About</Link>
-            </h1>
-            
-            <h1> 
-                <Link to="/profiles">Profiles</Link>
-            </h1>
-            
-            <h1> 
-                <Link to="/photos">All Photos</Link>
-            </h1>                
-            <h1>
-                { currentUser ?
-                <Link to={`/profiles/${currentUser.uid}`}>My Profile</Link>:
-                <Link to="/sign-up">Sign Up</Link>   
-                }
-            </h1>
-            
-            <h1> 
-                { currentUser ?
-                <button onClick={handleSignout}>Sign Out</button>
-                :<Link to="/sign-in">Sign In</Link>
-                }
-            </h1> 
+                    <li>
+                        <h1> 
+                            <Link to="/about">About</Link>
+                        </h1>    
+                    </li>
+                    
+                    <li>
+                        <h1> 
+                            <Link to="/photos">All Photos</Link>
+                        </h1>
+                    </li>
+                    
+                    <li>                   
+                        <h1>
+                            { currentUser ?
+                            <Link to={`/profiles/${currentUser.uid}`}>My Profile</Link>:
+                            <Link to="/sign-up">Sign Up</Link>   
+                            }
+                        </h1>
+                    </li>
+                    
+                    <li>
+                        <h1> 
+                            { currentUser ?
+                            <button onClick={handleSignout}>Sign Out</button>:
+                            <Link to="/sign-in">Sign In</Link>}
+                        </h1> 
+                    </li>
+                </ul>            
         </nav> 
                     
     );
