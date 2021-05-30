@@ -4,18 +4,18 @@ import { Link, useHistory } from 'react-router-dom'
 import React, { useState } from 'react';
 
 const Navbar = () => {
-    const { error, setError } = useState()
+    // const { error, setError } = useState()
     const { currentUser, logout } = useAuth()
     const history = useHistory()
   
     async function handleSignout() {
-      setError("")
+      // setError("")
   
       try {
         await logout()
         history.push("/login")
       } catch {
-        setError("Failed to log out")
+        console.log("Error while logging out. You should tell the user!")
       }
     }
     return (
