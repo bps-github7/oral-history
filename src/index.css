@@ -8,6 +8,7 @@
 
 /* base styles & title */
 body{
+  background-color: gainsboro;
   font-family: "Noto Serif";
   color: var(--secondary);
 }
@@ -21,3 +22,33 @@ body{
   letter-spacing: 2px;
   font-weight: normal;
 }
+
+/* TODO: Gotta be honest, im not really sure whats going on with the css in this project/ how to config it
+  i previously thought it was globally styled (react default, i beleive), now it seems that components
+  get their style from a matching css file in directory with the same file name w/ css extension
+
+  need to figure out what this is. how to configure it, because its very non helpful for styling based
+  dev tasks. for now Im just throwing shit in here 
+ */
+
+ nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: flex-wrap;
+  justify-content: space-around;
+  align-items: center;
+  background: var(--error);
+  height: 5vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+}
+
+ nav div {
+   list-style: none;
+   background: var(--primary);
+   border: 4px groove var(--secondary);
+   margin: 0.5em;
+   padding: 1rem;
+   
+ }

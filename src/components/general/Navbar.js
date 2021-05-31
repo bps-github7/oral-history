@@ -19,44 +19,67 @@ const Navbar = () => {
       }
     }
     return (
-            <nav style={{padding: "5px"}}>
-                <ul style={{ display : "inline", listStyle: "none"}}>
-                    <li>
-                        <h1 className="title">Oral-History</h1>
-                    </li>
+      <nav>
+          <div>
+              <h1 className="title">Oral-History</h1>
+          </div>
+          <div><Link to="/about">About</Link></div>
+          <div><Link to="/photos">All Photos</Link></div>
+          <div>                   
+            { currentUser ?
+              <Link to={`/profiles/${currentUser.uid}`}>My Profile</Link>:
+              <Link to="/sign-up">Sign Up</Link>   
+            }
+          </div>
+          <div>
+            {
+              currentUser ?
+              <button onClick={handleSignout}>Sign Out</button>:
+              <Link to="/sign-in">Sign In</Link>
+            }
+          </div>
 
-                    <li>
-                        <h1> 
-                            <Link to="/about">About</Link>
-                        </h1>    
-                    </li>
-                    
-                    <li>
-                        <h1> 
-                            <Link to="/photos">All Photos</Link>
-                        </h1>
-                    </li>
-                    
-                    <li>                   
-                        <h1>
-                            { currentUser ?
-                            <Link to={`/profiles/${currentUser.uid}`}>My Profile</Link>:
-                            <Link to="/sign-up">Sign Up</Link>   
-                            }
-                        </h1>
-                    </li>
-                    
-                    <li>
-                        <h1> 
-                            { currentUser ?
-                            <button onClick={handleSignout}>Sign Out</button>:
-                            <Link to="/sign-in">Sign In</Link>}
-                        </h1> 
-                    </li>
-                </ul>            
-        </nav> 
+        {/* <ul>
+          <li>
+              <h1 className="title">Oral-History</h1>
+          </li>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/photos">All Photos</Link></li>
+          <li>                   
+            { currentUser ?
+              <Link to={`/profiles/${currentUser.uid}`}>My Profile</Link>:
+              <Link to="/sign-up">Sign Up</Link>   
+            }
+          </li>
+          <li>
+            {
+              currentUser ?
+              <button onClick={handleSignout}>Sign Out</button>:
+              <Link to="/sign-in">Sign In</Link>
+            }
+          </li>
+        </ul> 
+
+
+        <ul>
+          <li>your rectum</li>
+          <li>is a long,</li>
+          <li>elusive, pink snake</li>
+        </ul>
+
+        <ul>
+          <li>from which</li>
+          <li>I fling</li>
+          <li>da birdee</li>
+        </ul>
+
+        <ul>
+          <li>MY ASS</li>
+          <li>is wet</li>
+          <li>SOOO stinky and wet</li>
+        </ul> */}
+      </nav> 
                     
     );
 }
-
 export default Navbar;
