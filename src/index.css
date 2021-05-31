@@ -34,8 +34,8 @@ body{
  nav {
   display: flex;
   flex-direction: row;
-  flex-wrap: flex-wrap;
-  justify-content: space-around;
+  /* flex-wrap: flex-; */
+  justify-content: space-between;
   align-items: center;
   background: var(--error);
   height: 5vh;
