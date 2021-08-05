@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+# where the api key is stored
+/src/services/firebase.js
+
 # testing
 /coverage
 
